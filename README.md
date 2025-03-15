@@ -11,7 +11,7 @@ Bu loyiha talabalarga kurslarga yozilish va o'z progresslarini kuzatish imkonini
 ### O'rnatish:
 ```sh
 # Repository-ni klonlash
-git clone https://github.com/username/edtech-backend.git
+git clone https://github.com/khayrullaevf/edtech-backend.git
 cd edtech-backend
 
 # NPM paketlarni o'rnatish
