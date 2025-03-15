@@ -11,7 +11,7 @@ Bu loyiha talabalarga kurslarga yozilish va o'z progresslarini kuzatish imkonini
 ### O'rnatish:
 ```sh
 # Repository-ni klonlash
-git clone https://github.com/khayrullaevf/edtech-backend.git
+git clone https://github.com/username/edtech-backend.git
 cd edtech-backend
 
 # NPM paketlarni o'rnatish
@@ -122,12 +122,13 @@ Admin token kerak (Headers):
 }
 ```
 
-## 5. Kursga yozilish (Enroll Routes)
+## 5. Kursga yozilish va progress kuzatish (Enrollment & Progress Routes)
 
 | Yo‘nalish | Metod | Tavsif |
 |-------------------|--------|---------------------------------|
 | /api/enroll | POST | Talabani kursga yozish |
 | /api/enroll/progress | PUT | Talabaning progressini yangilash |
+| /api/enroll/:studentId/:courseId | GET | Talabaning kursdagi progressini olish |
 
 ### 🔹 Kursga yozilish (POST /api/enroll)
 #### So‘rov (Request):
@@ -144,6 +145,32 @@ Admin token kerak (Headers):
 }
 ```
 
+### 🔹 Progress yangilash (PUT /api/enroll/progress)
+#### So‘rov (Request):
+```json
+{
+  "studentId": "student_id",
+  "courseId": "course_id",
+  "progress": 90
+}
+```
+#### Javob (Response):
+```json
+{
+  "message": "Progress yangilandi!"
+}
+```
+
+### 🔹 Talabaning progressini olish (GET /api/enroll/:studentId/:courseId)
+#### Javob (Response):
+```json
+{
+  "studentId": "student_id",
+  "courseId": "course_id",
+  "progress": 90
+}
+```
+
 ## 6. Xavfsizlik (Authentication & Authorization)
 - JWT orqali autentifikatsiya
 - Admin va student rollari
@@ -151,6 +178,8 @@ Admin token kerak (Headers):
 
 ## 7. API Hujjatlari
 Swagger yoki Postman collection orqali test qilishingiz mumkin.
+
+
 
 ---
 Loyiha ochiq manba va istalgan hissa qo‘shishingiz mumkin. 🚀
